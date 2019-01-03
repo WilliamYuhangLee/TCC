@@ -1,0 +1,2 @@
+add_executable(SLP_Interpreter slp_interpreter.c slp_interpreter.h)
+target_link_libraries(SLP_Interpreter Chapter1)
