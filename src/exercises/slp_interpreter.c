@@ -5,7 +5,7 @@
  */
 
 #include "slp_interpreter.h"
-#include "../slp.h"
+#include "slp.h"
 #include <stdio.h>
 
 static int max(int a, int b) {

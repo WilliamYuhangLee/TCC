@@ -5,7 +5,7 @@
 #ifndef TCC_SLP_INTERPRETER_H
 #define TCC_SLP_INTERPRETER_H
 
-#include "../slp.h"
+#include "slp.h"
 
 int max_print_args_exp(A_expression expression);
 int max_print_args_expList(A_expressionList expressionList);
