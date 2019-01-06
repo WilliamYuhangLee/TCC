@@ -88,4 +88,6 @@ struct A_expressionList_ {
 A_expressionList A_PairExpressionList(A_expression head, A_expressionList tail);
 A_expressionList A_LastExpressionList(A_expression last);
 
+A_statement prog_init();
+
 #endif //TCC_SLP_H

@@ -1,5 +1,7 @@
 /**
  * Created by William Lee on 1/4/19.
+ *
+ * Declares functions needed to count the max number of arguments of print statements in a straight-line program
  */
 
 #ifndef TCC_SLP_INTERPRETER_H

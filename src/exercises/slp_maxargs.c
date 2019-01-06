@@ -1,10 +1,10 @@
 /**
  * Created by William Lee on 1/3/19.
  *
- * A simple straight_line program analyzer and interpreter
+ * Define functions to count the max number of arguments of print statements in a straight-line program
  */
 
-#include "slp_interpreter.h"
+#include "slp_maxargs.h"
 #include "slp.h"
 #include <stdio.h>
 
@@ -105,8 +105,7 @@ void init_prog(A_statement *program) {
 }
 
 int main() {
-    A_statement program = checked_malloc(sizeof(*program));
-    init_prog(&program);
+    A_statement program = prog_init();
     printf("%d", max_print_args_stm(program));
     return 0;
 }

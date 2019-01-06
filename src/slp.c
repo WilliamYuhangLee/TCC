@@ -77,3 +77,23 @@ A_expressionList A_LastExpressionList(A_expression last) {
     p->u.last = last;
     return p;
 }
+
+/**
+ * Initialize a program as a compound statement shown below:
+ * a = 5 + 3; b = (print(a, a - 1), 10 * a); print(b);
+ *
+ * @return the initialized program as a compound statement
+ */
+A_statement prog_init() {
+    // a = 5 + 3; b = (print(a, a - 1), 10 * a); print(b);
+    return A_CompoundStatement(
+            A_AssignStatement("a", A_OpExpression(A_NumExpression(5), A_plus, A_NumExpression(3))), // a = 5 + 3
+            A_CompoundStatement(
+                    A_AssignStatement("b", // b = (print(a, a - 1), 10 * a)
+                                      A_ExpressionSequenceExpression(
+                                              A_PrintStatement(A_PairExpressionList(A_IdExpression("a"),
+                                                                                    A_LastExpressionList(
+                                                                                            A_OpExpression(A_IdExpression("a"), A_minus, A_NumExpression(1))))),
+                                              A_OpExpression(A_NumExpression(10), A_times, A_IdExpression("a")))),
+                    A_PrintStatement(A_LastExpressionList(A_IdExpression("b"))))); // print(b)
+}
